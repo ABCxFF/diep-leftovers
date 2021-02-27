@@ -9,7 +9,7 @@
 // @grant       none
 // ==/UserScript==
 
-// The following update every build
+// The following updates every build
 const healthbarOffset = 40;
 const entityPtr = 57648;
 
