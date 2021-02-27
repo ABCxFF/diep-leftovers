@@ -9,7 +9,7 @@
 // @grant       none
 // ==/UserScript==
 
-// The following updates every build
+// The following updates every build - not for the latest
 const healthbarOffset = 40;
 const entityPtr = 57648;
 
