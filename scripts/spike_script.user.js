@@ -16,14 +16,14 @@
 //
 // https://github.com/ABCxFF/diepindepth for more information (might not be public yet)
 
-const BUILD = 'e99021e7fccb3f654e220f67668379afb0f4cc77';
+const BUILD = 'df62366bf59429b3032e2e3bb4db49c2bbc44b5b';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
-const ROOT = 166820;
-const TANK_COUNT = ROOT + 4;
-const END = ROOT - 12;
+const ROOT = 114560;
+const TANK_COUNT = 114564;
+const END = 114552;
 
-const SPIKE = 0b01011110;
+const SPIKE = 0b01011100;
 
 new Promise((res) => {
   const Memory = WebAssembly.Memory;
