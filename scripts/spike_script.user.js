@@ -16,12 +16,12 @@
 //
 // https://github.com/ABCxFF/diepindepth for more information (might not be public yet)
 
-const BUILD = 'df62366bf59429b3032e2e3bb4db49c2bbc44b5b';
+const BUILD = 'd2f03427541ea42547fbfb6aee10223a4b1edf29';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
-const ROOT = 114560;
-const TANK_COUNT = 114564;
-const END = 114552;
+const ROOT = 116436;
+const TANK_COUNT = 116440;
+const END = 116428;
 
 const SPIKE = 0b01011100;
 
