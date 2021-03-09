@@ -1,18 +1,18 @@
-;
-(async (dependencies) => {
-    await Promise.all(dependencies.map((src) => {
+;(async (dependencies) => {
+    for (let src of dependencies) {
         const script = document.head.appendChild(document.createElement('script'));
         script.src = src;
 
-        return new Promise((res, rej) => {
+        await new Promise((res, rej) => {
             script.onload = res;
             script.onerror = rej;
         });
-    }));
+    };
 
     const SEARCHES = {
         tankCount: [OP_CALL, OP_CALL, OP_I32_CONST, OP_I32_LOAD, OP_I32_REM_U, OP_GET_LOCAL, OP_I32_XOR, (instructions, index) => instructions[index - 4].immediates[0]],
-        root: [OP_BLOCK, OP_I32_CONST, OP_I32_LOAD8_U, OP_I32_CONST, OP_I32_AND, OP_BR_IF, OP_I32_CONST, OP_CALL, OP_I32_EQZ, OP_BR_IF, OP_I32_CONST, (instructions, index, func) => instructions.length === 37 && instructions[index].immediates[0]]
+        root: [OP_BLOCK, OP_I32_CONST, OP_I32_LOAD8_U, OP_I32_CONST, OP_I32_AND, OP_BR_IF, OP_I32_CONST, OP_CALL, OP_I32_EQZ, OP_BR_IF, OP_I32_CONST, (instructions, index, func) => instructions.length === 37 && instructions[index].immediates[0]],
+        end: [OP_BLOCK, OP_I32_CONST, OP_I32_LOAD8_U, OP_I32_CONST, OP_I32_AND, OP_BR_IF, OP_I32_CONST, OP_CALL, OP_I32_EQZ, OP_BR_IF, OP_I32_CONST, OP_I64_CONST, OP_I64_STORE, OP_I32_CONST, (instructions, index, func) => instructions.length === 37 && instructions[index].immediates[0]]
     };
 
     function* instructionGen(bytes) {
@@ -29,9 +29,9 @@
 
     if (document.readyState !== 'complete') await new Promise(res => document.addEventListener('DOMContentLoaded', res));
 
-    const BUILD = (/(?!build_)[0-9a-fA-F]{40}/.exec(document.body.innerHTML) || [false])[0];
+    const BUILD = (/(?!build_)[0-9a-fA-F]{40}/.exec(document.body.innerHTML) || [false])[0] || prompt('Unable to detect build, please manually specify');
 
-    if (!BUILD) return alert('Unable to detect build');
+    if (!BUILD) return alert('No valid build');
 
     const bin = await fetch('https://static.diep.io/build_' + BUILD + '.wasm.wasm').then(res => res.arrayBuffer());
     const wail = new WailParser(new Uint8Array(bin));
