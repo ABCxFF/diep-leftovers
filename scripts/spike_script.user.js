@@ -19,11 +19,11 @@
 const BUILD = 'd2f03427541ea42547fbfb6aee10223a4b1edf29';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
-const ROOT = 116436;
-const TANK_COUNT = 116440;
-const END = 116428;
+const ROOT = 168868;
+const TANK_COUNT = 168872;
+const END = 168860;
 
-const SPIKE = 0b01011100;
+const SPIKE = 0b10101000;
 
 new Promise((res) => {
   const Memory = WebAssembly.Memory;
