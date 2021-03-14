@@ -16,7 +16,7 @@
 //
 // https://github.com/ABCxFF/diepindepth for more information (might not be public yet)
 
-const BUILD = 'd2f03427541ea42547fbfb6aee10223a4b1edf29';
+const BUILD = 'c7b5ddda7d3d664b61ba63cb817de22645853562';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
 const ROOT = 168868;
