@@ -19,9 +19,9 @@
 const BUILD = 'c7b5ddda7d3d664b61ba63cb817de22645853562';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
-const ROOT = 168868;
-const TANK_COUNT = 168872;
-const END = 168860;
+const ROOT = 168820;
+const TANK_COUNT = 168824;
+const END = 168812;
 
 const SPIKE = 0b10101000;
 
