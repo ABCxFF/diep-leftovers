@@ -14,9 +14,9 @@
 // https://github.com/ABCxFF/diep-leftovers/tree/main/screenshots for screenshots
 // Made by ABC
 //
-// https://github.com/ABCxFF/diepindepth for more information (might not be public yet)
+// https://github.com/ABCxFF/diepindepth/memory for more information (might not be public/complete yet)
 
-const BUILD = 'c7b5ddda7d3d664b61ba63cb817de22645853562';
+const BUILD = '19274154bed4f3e8d39f8fd2654ef6f135a4ff9e';
 const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
 
 const ROOT = 168820;
