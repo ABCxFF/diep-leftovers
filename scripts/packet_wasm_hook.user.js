@@ -20,6 +20,8 @@
   The way this script works will be explained in /memory or /wasm someday, but ignore that for now
 */
 
+const nsfsk = false;
+
 class PacketHook extends EventTarget {
   static get CONST() {
     return {
@@ -61,7 +63,7 @@ class PacketHook extends EventTarget {
         fieldStr: "sendPacket",
         kind: "func",
     });
-    wail.addExportEntry(sendPacket, {
+    wail.addExportEntry(recvPacket, {
         fieldStr: "recvPacket",
         kind: "func",
     });
@@ -170,6 +172,8 @@ class PacketHook extends EventTarget {
     free(ptr);
   }
 }
+
+if (!nsfsk) throw 'Packet Hook';
 
 const TYPE = ['clientbound', 'serverbound']
 
