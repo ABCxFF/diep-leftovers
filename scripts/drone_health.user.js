@@ -9,10 +9,6 @@
 // @grant       none
 // ==/UserScript==
 
-// The following updates every build - not for the latest
-const healthbarOffset = 40;
-const entityPtr = 57648;
-
 // REMOVES ALL BUGS - DO NOT REMOVE CODE BELOW - BEWARE OF SLOW CODE BELOW
 const stealBuf = (sharedBuf) => new Uint8Array(new Uint8Array(sharedBuf)).buffer;
 
@@ -92,8 +88,8 @@ class DroneHealthModule {
           memory: this.memory
         },
         const: {
-          healthbarOffset,
-          entityPtr,
+          healthbarOffset: 40,
+          entityPtr: 56568,
         }
       });
 
