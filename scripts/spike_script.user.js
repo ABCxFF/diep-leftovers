@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spike Script
 // @author       ABC
-// @namespace    Praise Spike - discord.gg/ccRw8rwv67
+// @namespace    Praise Spike - discord.gg/j5kMnUfm
 // @description  Makes every tank on the tank list a spike
 // @match        https://diep.io/
 // @version      0.5.0
@@ -16,12 +16,12 @@
 //
 // https://github.com/ABCxFF/diepindepth/memory for more information (might not be public/complete yet)
 
-const BUILD = '19274154bed4f3e8d39f8fd2654ef6f135a4ff9e';
-const SPIKE_SQUAD = 'discord.gg/ccRw8rwv67';
+const BUILD = '336eeced717141735691690a5def1adb11e2cc75';
+const SPIKE_SQUAD = 'discord.gg/j5kMnUfm';
 
-const ROOT = 168820;
-const TANK_COUNT = 168824;
-const END = 168812;
+const ROOT = 168980;
+const TANK_COUNT = 168984;
+const END = 168972;
 
 const SPIKE = 0b10101000;
 
@@ -58,7 +58,7 @@ new Promise((res) => {
     }
     
     console.log('Tank Processing Completed');
-    console.log('Praise Spike and Join discord.gg/ccRw8rwv67');
+    console.log('Praise Spike and Join ' + SPIKE_SQUAD);
   }
   
   
