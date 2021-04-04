@@ -2,8 +2,8 @@
 // @name         Diep.io Packet WASM Hook
 // @author       ABC
 // @version      1.0.0
-// @namespace    336eeced717141735691690a5def1adb11e2cc75
-// @description  336eeced717141735691690a5def1adb11e2cc75
+// @namespace    e7385b9d8a3f74065ed68f9cf0c641be25cf4b88
+// @description  e7385b9d8a3f74065ed68f9cf0c641be25cf4b88
 // @match        *://diep.io/
 // @run-at       document-start
 // @require      https://raw.githubusercontent.com/Qwokka/wail.min.js/5e32d36bd7a5e0830d1ff4b64d3587aea13f77da/wail.min.js
@@ -15,7 +15,7 @@
 /*
   Usage is explained in the console on run
 
-  For build 336eeced717141735691690a5def1adb11e2cc75
+  For build e7385b9d8a3f74065ed68f9cf0c641be25cf4b88
 
   The way this script works will be explained in /memory or /wasm someday, but ignore that for now
 */
@@ -25,12 +25,12 @@ const nsfsk = false;
 class PacketHook extends EventTarget {
   static get CONST() {
     return {
-      BUILD: "336eeced717141735691690a5def1adb11e2cc75",
-      SEND_PACKET_INDEX: 106,
-      RECV_PACKET_INDEX: 410,
+      BUILD: "e7385b9d8a3f74065ed68f9cf0c641be25cf4b88",
+      SEND_PACKET_INDEX: 107,
+      RECV_PACKET_INDEX: 407,
       MALLOC: 'R',
-      FREE: 't',
-      SOCKET_PTR: 106752,
+      FREE: 'v',
+      SOCKET_PTR: 105016,
     }
   }
   
@@ -124,7 +124,7 @@ class PacketHook extends EventTarget {
         this.wasm = wasm.instance;
         this.malloc = this.wasm.exports[PacketHook.CONST.MALLOC];
         this.free = this.wasm.exports[PacketHook.CONST.FREE];
-        console.log('Module exports done!\n\t- Hook.free\n\t- Hook.malloc\n\t- Hook.send\n\t- Hook.recv\n\t- Hook.addEventListener(\'clientbound\', ({data}) => console.log(buf));\n\t- Hook.addEventListener(\'serverbound\', ({data}) => console.log(buf));');
+        console.log('Module exports done!\n\t- Hook.free\n\t- Hook.malloc\n\t- Hook.send\n\t- Hook.recv\n\t- Hook.addEventListener(\'clientbound\', ({data}) => console.log(data));\n\t- Hook.addEventListener(\'serverbound\', ({data}) => console.log(data));');
         return wasm
       }).catch(err => {
         console.error('Err in loading up wasm:')
