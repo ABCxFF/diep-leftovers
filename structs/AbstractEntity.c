@@ -4,7 +4,10 @@ struct AbstractEntity {
     // Self Ent Pointer @00
     // - points to itself
     struct AbstractEntity* self; // @00
-    int32_t unknown0; // @04
+
+    // Total Entity Count
+    // - Number of all entities (not just in a specific field group)
+    int32_t* entity_count; // @04
 
     // Prev Ent Pointer @08
     // - Points to the prev entity received, or something like that
