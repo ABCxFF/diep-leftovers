@@ -52,13 +52,13 @@ struct AbstractEntity {
     double entity_creation_time; // @40
 
     // 16 Field Groups, all pointing to a FieldGroup struct (will be written later)
-    // 0 : OWNERS
+    // 0 : RELATIONS
     // 1 :
     // 2 : BARREL
     // 3 : PHYSICS
     // 4 : HEALTH
     // 5 :
-    // 6 : UNKNOWN
+    // 6 : UNUSED
     // 7 : ARENA
     // 8 : NAME
     // 9 : GUI
