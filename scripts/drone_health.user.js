@@ -89,7 +89,7 @@ class DroneHealthModule {
         },
         const: {
           healthbarOffset: 40,
-          entityPtr: 57212,
+          entityPtr: 57200,
         }
       });
 
