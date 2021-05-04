@@ -54,7 +54,7 @@ class DroneHealthModule {
         window.WebAssembly.instantiate = function(buf, options) {
           const bin = new Uint8Array(buf);
           
-          bin[bin.indexOf(121) + 2] = 3;
+          bin[bin.indexOf(121) + 2] |= 2;
 
           const wasm = WebAssembly._instantiate(bin.buffer, options);
 
