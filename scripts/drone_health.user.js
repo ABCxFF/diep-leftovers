@@ -88,8 +88,8 @@ class DroneHealthModule {
           memory: this.memory
         },
         const: {
-          healthbarOffset: 8,
-          entityPtr: 55456,
+          healthbarOffset: 40,
+          entityPtr: 57152,
         }
       });
 
