@@ -10,7 +10,7 @@
 // @resource     packet_hook https://github.com/ABCxFF/diepindepth/raw/main/protocol/userscripts/packet_hook.user.js
 // @grant        GM_getResourceText
 // @grant        unsafeWindow
-// ==/UserScript== s
+// ==/UserScript==
 
 const js = GM_getResourceText("packet_hook");
 const CONST = eval("(" + js.slice(js.indexOf("return {") + 7, js.indexOf("}", js.indexOf("return {") + 8) + 1) + ")");
