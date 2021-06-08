@@ -16,7 +16,6 @@ const js = GM_getResourceText("packet_hook");
 const CONST = eval("(" + js.slice(js.indexOf("return {") + 7, js.indexOf("}", js.indexOf("return {") + 8) + 1) + ")");
 const STORE_ADDR = 344;
 
-// github.com/ABCxFF/diepindepth/blob/main/protocol/outgoing.md
 void function TriFlank() {
   const hijack = (bin, imports) => {
     const wail = new WailParser(new Uint8Array(bin));
@@ -155,7 +154,15 @@ void function TriFlank() {
   
   // hook
   const _initWasm = window.WebAssembly.instantiate;
-  window.WebAssembly.instantiate = (bin, imports) => _initWasm(hijack(bin, imports), imports).then((wasm) => {
+  window.WebAssembly.instantiate = (bin, imports) => {
+    // if the script's out of date, the script's out of date
+    const build = (/(?!build_)[0-9a-f]{40}(?=\.wasm\.js)/.exec(new Error().stack)||[])[0];
+    if (build !== CONST.BUILD) {
+      alert("Invalid build. TriFlank not available - ask ABC to update packet hook");
+      return _initWasm(bin, imports);
+    }
+    
+    return _initWasm(hijack(bin, imports), imports).then((wasm) => {
       main(new Uint8Array(imports.a.memory.buffer), wasm.instance.exports.recvPacket);
       
       return wasm
@@ -163,4 +170,5 @@ void function TriFlank() {
       console.warn('Error in loading up wasm')
       throw err;
     });
+  }
 }();
