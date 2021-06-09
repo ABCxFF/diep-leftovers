@@ -12,6 +12,10 @@
 // @grant        unsafeWindow
 // ==/UserScript==
 
+/*
+  Turn off all other scripts before usage
+*/
+
 const js = GM_getResourceText("packet_hook");
 const CONST = eval("(" + js.slice(js.indexOf("return {") + 7, js.indexOf("}", js.indexOf("return {") + 8) + 1) + ")");
 const STORE_ADDR = 344;
