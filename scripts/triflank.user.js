@@ -13,7 +13,10 @@
 // ==/UserScript==
 
 /*
-  Turn off all other scripts before usage
+  Usage:
+    Step 1. Turn off all other scripts
+    Step 2. Upgrade to Tri-Angle in diepio sandbox
+    Step 3. Press J
 */
 
 const js = GM_getResourceText("packet_hook");
